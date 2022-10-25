@@ -3,7 +3,7 @@ function downloadFile({
   fileUrl,
   fileName,
   fileType,
-  isDownload,
+  isDownload = true,
   onprogress,
   callback,
 }) {
