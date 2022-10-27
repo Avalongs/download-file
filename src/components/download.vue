@@ -1,9 +1,9 @@
 <script setup>
-import downloadFile from "../utils/index";
+import downloadFile from "wuxun-downloadfile";
 const { msg, fileUrl, fileName } = defineProps({
   msg: {
     type: String,
-    default: "下载视频",
+    default: "下载图片",
   },
   fileUrl: {
     type: String,
@@ -16,12 +16,11 @@ const { msg, fileUrl, fileName } = defineProps({
 });
 const download = () => {
   downloadFile({
-    fileUrl,
-    fileName,
-    fileType: "",
-    isDownload: true,
+    fileUrl: "https://cdn.apedesign.net/github/logo.png",
+    fileName: "CDN",
+    fileType: "png",
     onprogress: (progress) => {
-      console.log(progress);
+      // 获取进度条 / get progress
     },
   })
     .then((data) => {
